@@ -9,7 +9,7 @@
 #include <qtsingleapplication.h>
 #include "MainWindow.h"
 #include "Preferences/MerkaartorPreferences.h"
-#include "proj_api.h"
+#include "proj.h"
 #include "gdal_version.h"
 #include "Global.h"
 
@@ -137,8 +137,7 @@ int main(int argc, char** argv)
 
     qDebug() << "**** " << QDateTime::currentDateTime().toString(Qt::ISODate) << " -- Starting " << QString("%1 %2").arg(qApp->applicationName()).arg(STRINGIFY(VERSION));
     qDebug() <<	"-------" << QString("using Qt version %1 (built with %2)").arg(qVersion()).arg(QT_VERSION_STR);
-    QString projVer = QString(STRINGIFY(PJ_VERSION));
-    qDebug() <<	"-------" << QString("using PROJ4 version %1.%2.%3").arg(projVer.left(1)).arg(projVer.mid(1, 1)).arg(projVer.right(1));
+    qDebug() <<	"-------" << QString("using PROJ4 version %1.%2.%3").arg(PROJ_VERSION_MAJOR).arg(PROJ_VERSION_MINOR).arg(PROJ_VERSION_PATCH);
     qDebug() <<	"-------" << QString("using GDAL version %1").arg(GDAL_RELEASE_NAME);
     qDebug() << "-------" << "with arguments: " << QCoreApplication::arguments();
 

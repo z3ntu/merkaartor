@@ -9,8 +9,8 @@
 #ifndef _MOBILE
 #include "MerkaartorPreferences.h"
 
-#include <proj_api.h>
-typedef projPJ ProjProjection;
+#include <proj.h>
+typedef PJ* ProjProjection;
 
 #endif // _MOBILE
 

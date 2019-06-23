@@ -2121,8 +2121,7 @@ void MainWindow::on_helpAboutAction_triggered()
     dlg.setWindowFlags(dlg.windowFlags() | Qt::MSWindowsFixedSizeDialogHint);
     About.Version->setText(About.Version->text().arg(STRINGIFY(REVISION)));
     About.QTVersion->setText(About.QTVersion->text().arg(qVersion()).arg(QT_VERSION_STR));
-    QString projVer = QString(STRINGIFY(PJ_VERSION));
-    About.Proj4Version->setText(About.Proj4Version->text().arg(QString("%1.%2.%3").arg(projVer.left(1)).arg(projVer.mid(1, 1)).arg(projVer.right(1))));
+    About.Proj4Version->setText(About.Proj4Version->text().arg(QString("%1.%2.%3").arg(PROJ_VERSION_MAJOR).arg(PROJ_VERSION_MINOR).arg(PROJ_VERSION_PATCH)));
     About.GdalVersion->setText(About.GdalVersion->text().arg(GDAL_RELEASE_NAME));
 
     QFile ct(":/Utils/CHANGELOG");
