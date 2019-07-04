@@ -1140,6 +1140,7 @@ void QGPSDDevice::run()
     connect(Server,SIGNAL(connected()),&Forward,SLOT(onLinkReady()));
     connect(Server,SIGNAL(readyRead()),&Forward,SLOT(onDataAvailable()));
     connect(this,SIGNAL(doStopDevice()),&Forward,SLOT(onStop()));
+    Server->write("?WATCH={\"enable\":true,\"nmea\":true}");
     exec();
 }
 
